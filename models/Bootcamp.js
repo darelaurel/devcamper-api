@@ -4,53 +4,56 @@ const BootcampSchema=new mongoose.Schema({
 
     name:{
         type:String,
-        required:[true, 'Veuillez ajouter un nom'],
+        required:[true, 'Please fill a name'],
         unique:true,
         trim:true,
-        maxlength:[50,"Ce nom est trop long"]
+        maxlength:[50,"The name is too long"]
     },
     
     slug:String,
     
     description:{
         type:String,
-        required:[true, 'Veuillez ajouter une description'],
-        maxlength:[500,"Cette description est trop longue"]
+        required:[true, 'Please add description'],
+        maxlength:[500,"The description is too long"]
     },
     
     website:{
      type:String,
      match:
      [/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/,
-        'Veuillez entrer votre site web'
+        'Please add your website'
      ]   
     },
     
     phone:{
         type:String,
         match:[/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/, 
-        'Le numero de telephone doit être compris entre 8 et 9 chiffres'
+        'The phone number is incorrect'
         ],
-        maxlength:[20, ]
+        maxlength:[20, "The phone number is too long"]
     },
     
     email:{
         type:String,
-        match:[/^([a-z0-9._-]+)@([a-z0-9]+).([a-z]{2,6}$)/, 'Le mail ne correspond pas ']
+        match:[/^([a-z0-9._-]+)@([a-z0-9]+).([a-z]{2,6}$)/, 'The mail doesn\'t match ']
     },
     
     address:{
         type:String,
-        required:[true, 'Veuillez ajouter une adresse'],
+        required:[true,'Please add adress'],
     },
     
-    location: {
-        type: {
+    location: 
+    {
+        type: 
+        {
           type: String, // Don't do `{ location: { type: String } }`
           enum: ['Point'], // 'location.type' must be 'Point'
           required: false
         },
-        coordinates: {
+        coordinates: 
+        {
           type: [Number],
           required: false,
           index:'2dsphere'
@@ -77,8 +80,8 @@ const BootcampSchema=new mongoose.Schema({
     
       averageRating:{
           type:Number,
-          min:[1, 'Le plus petit taux'],
-          max:[10, 'Le plus grand taux']
+          min:[1, 'The smallest rate'],
+          max:[10, 'The biggest rate']
       },
     
       averageCost:Number,

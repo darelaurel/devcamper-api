@@ -8,7 +8,7 @@ les routes
 
 le logger --middleware
 
-morgan --est le middleware
+morgan --est le middleware pour customiser affichage en console
 
 mongoose pour la connexion a la BD --- ajouter une ip de partout avant de copier le SRV dans Compass
 
@@ -21,3 +21,7 @@ utiliser les fonctions du model dans le controlleur pour gerer les donnes
 creer un middleware pour la gestion des erreurs des controllers
 
 creer une classe fille d'Erreur dont on passe une instance au middleware next du controlleur 
+
+next --appelle un autre middleware
+
+le middleware pour gerer en lieu et place des try catch asyncHandler
