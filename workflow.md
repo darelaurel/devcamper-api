@@ -25,3 +25,7 @@ creer une classe fille d'Erreur dont on passe une instance au middleware next du
 next --appelle un autre middleware
 
 le middleware pour gerer en lieu et place des try catch asyncHandler
+
+argv  retourne la liste des param au lancement du fichier js avec node
+le 1er element contient le path de l'executable de node
+le second le nom du fichier
