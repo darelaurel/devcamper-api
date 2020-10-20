@@ -3,7 +3,7 @@ const ErrorResponse = require('./../utils/errorResponse');
 const asyncHandler=require('./../middlewares/asyncHandler');
 const geocoder = require('../utils/geocoder');
 /*
-** Liste des bootcamps
+** Get bootcamps
 ** GET /api/v1/bootcamps
 ** Public
 */
@@ -85,7 +85,7 @@ exports.getBootcamps=asyncHandler(async(req, res,next)=>{
 })
 
 /*
-** Obtenir un bootcamp
+** Get abootcamp
 ** GET /api/v1/bootcamps/:id
 ** Public
 */
@@ -104,7 +104,7 @@ exports.getBootcamp=asyncHandler(async(req, res,next)=>
 })
 
 /*
-** Ajouter un bootcamp
+** Add a bootcamp
 ** POST /api/v1/bootcamps
 ** Privé
 */
@@ -119,7 +119,7 @@ exports.createBootcamp=asyncHandler(async(req, res,next) =>
 })
 
 /*
-** Modifier un bootcamp
+** Update a bootcamp
 ** PUT /api/v1/bootcamps/:id
 ** Privé
 */
@@ -139,7 +139,7 @@ exports.updateBootcamp=asyncHandler(async(req, res,next)=>
 })
 
 /*
-** @desc Supprimer un bootcamp
+** @desc Delete a bootcamp
 ** @route DELETE /api/v1/bootcamps/:id
 ** @access Private
 */
