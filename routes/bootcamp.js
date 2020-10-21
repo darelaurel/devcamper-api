@@ -6,9 +6,18 @@ const { getBootcamps,
         deleteBootcamp,
         getBootcampsInRadius
      }= require('../controllers/bootcamp')
-
+ 
+/***
+ * Find courses of a bootcamp
+ */
+const courseRouter=require('./course');
 
 const router=express.Router();
+
+/***
+ * courses is child route for bootcamp
+ */
+router.use('/:bootcampId/courses',courseRouter);
 
 router
 .route('/')

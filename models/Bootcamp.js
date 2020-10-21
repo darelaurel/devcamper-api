@@ -4,7 +4,8 @@ const slugify=require('slugify');
 
 const geocoder=require('./../utils/geocoder');
 
-const BootcampSchema=new mongoose.Schema({
+const BootcampSchema=new mongoose.Schema(
+  {
 
     name:{
         type:String,
@@ -118,7 +119,15 @@ const BootcampSchema=new mongoose.Schema({
           type:Date,
           default:Date.now
       }
-})
+    },
+    {
+      /***
+       * acccess datas transformed in api response
+       */
+      toJSON:{virtuals:true},
+      toObject:{virtuals:true},
+    }
+)
 
 BootcampSchema.pre('save',function(next){
   this.slug=slugify(this.name,{lower:true});
@@ -148,6 +157,26 @@ BootcampSchema.pre('save', async function(next){
   this.address=undefined;
   next();
 })
+
+/***
+ *  Cascade delete courses when a bootcamp is deleted
+ */ 
+BootcampSchema.pre('remove', async function(next) {
+  console.log(`Courses being removed from bootcamp ${this._id}`);
+  await this.model('Course').deleteMany({ bootcamp: this._id });
+  next();
+});
+
+/***
+ * Get courses of a bootcamp based on Id
+ * wrapped in courses
+ */
+BootcampSchema.virtual('courses', {
+  ref: 'Course',
+  localField: '_id',
+  foreignField: 'bootcamp',
+  justOne: false
+});
 
 
 module.exports=mongoose.model('Bootcamp', BootcampSchema)

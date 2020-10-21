@@ -1,6 +1,7 @@
 const express=require('express');
 const dotenv=require('dotenv');
 const bootcamps=require('./routes/bootcamp');
+const courses=require('./routes/course');
 const morgan=require('morgan');
 const colors=require('colors');
 const errorHandler=require('./middlewares/error');
@@ -32,6 +33,8 @@ if(process.env.NODE_ENV=="development")
  * mount the routes
  */
 app.use('/api/v1/bootcamps', bootcamps)
+
+app.use('/api/v1/courses', courses)
 
 app.use(errorHandler)
 

@@ -28,7 +28,7 @@ exports.getBootcamps=asyncHandler(async(req, res,next)=>{
      */
     queryStr=queryStr.replace(/\b(gt|gte|lt|lte|in|eq)\b/g, match=>`$${match}`);
 
-    query=Bootcamp.find(JSON.parse(queryStr));
+    query=Bootcamp.find(JSON.parse(queryStr)).populate('courses');
 
     if(req.query.select)
     {
@@ -94,7 +94,7 @@ exports.getBootcamp=asyncHandler(async(req, res,next)=>
     const bootcamp =await Bootcamp.findById(req.params.id)
     if(!bootcamp)
     {
-        next(new ErrorResponse(`Bootcamp ${req.params.id} not putted`, 404))
+        next(new ErrorResponse(`Bootcamp ${req.params.id} doesn't exists `, 404))
     }
     res.status(200).json(
     {
@@ -145,11 +145,13 @@ exports.updateBootcamp=asyncHandler(async(req, res,next)=>
 */
 exports.deleteBootcamp= asyncHandler(async(req, res,next)=>
 {
-    const bootcamp=await Bootcamp.findByIdAndDelete(req.params.id)
+    const bootcamp=await Bootcamp.findById(req.params.id)
     if(!bootcamp)
     {
         next(new ErrorResponse(`Bootcamp not found ${req.params.id}`, 400))
     }
+    bootcamp.remove();
+
     res.status(204).json({success:true,data:{"message":"Deleted with success"}})
 })
 
