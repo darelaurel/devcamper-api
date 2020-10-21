@@ -121,7 +121,7 @@ exports.createBootcamp=asyncHandler(async(req, res,next) =>
 /*
 ** Update a bootcamp
 ** PUT /api/v1/bootcamps/:id
-** Privé
+** Private
 */
 
 exports.updateBootcamp=asyncHandler(async(req, res,next)=>
@@ -133,7 +133,7 @@ exports.updateBootcamp=asyncHandler(async(req, res,next)=>
     })
     if(!bootcamp)
     {
-        next(new ErrorResponse(`Can't update ${req.params.id}`, 404))
+        next(new ErrorResponse(`Don't find bootcamp n° ${req.params.id}`, 404))
     }
      res.status(200).json({success:true,data:bootcamp})
 })
@@ -148,11 +148,14 @@ exports.deleteBootcamp= asyncHandler(async(req, res,next)=>
     const bootcamp=await Bootcamp.findById(req.params.id)
     if(!bootcamp)
     {
-        next(new ErrorResponse(`Bootcamp not found ${req.params.id}`, 400))
+        next(new ErrorResponse(`Bootcamp ${req.params.id} not found `, 400))
     }
     bootcamp.remove();
 
-    res.status(204).json({success:true,data:{"message":"Deleted with success"}})
+    res.status(204).json({
+        success: true,
+        data: {}
+      });
 })
 
 /*
