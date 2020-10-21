@@ -1,5 +1,6 @@
 const express=require('express');
 const dotenv=require('dotenv');
+const fileUpload=require('express-fileupload');
 const bootcamps=require('./routes/bootcamp');
 const courses=require('./routes/course');
 const morgan=require('morgan');
@@ -32,6 +33,9 @@ if(process.env.NODE_ENV=="development")
 /***
  * mount the routes
  */
+
+app.use(fileUpload());
+
 app.use('/api/v1/bootcamps', bootcamps)
 
 app.use('/api/v1/courses', courses)
