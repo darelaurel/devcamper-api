@@ -1,14 +1,16 @@
 const express=require('express');
 const dotenv=require('dotenv');
 const fileUpload=require('express-fileupload');
-const bootcamps=require('./routes/bootcamp');
-const courses=require('./routes/course');
 const morgan=require('morgan');
 const colors=require('colors');
 const errorHandler=require('./middlewares/error');
 const logger=require('./middlewares/logger');
 const connectDB=require('./config/db');
+const cookieParser = require('cookie-parser')
 
+const bootcamps=require('./routes/bootcamp');
+const courses=require('./routes/course');
+const auth = require('./routes/auth');
 /*
 ** Loading of environment variables
 */
@@ -23,6 +25,8 @@ const app=express()
 
 //Body parser to json for request
 app.use(express.json())
+
+app.use(cookieParser())
 
 if(process.env.NODE_ENV=="development")
 {
@@ -39,6 +43,8 @@ app.use(fileUpload());
 app.use('/api/v1/bootcamps', bootcamps)
 
 app.use('/api/v1/courses', courses)
+
+app.use('/api/v1/auth', auth)
 
 app.use(errorHandler)
 

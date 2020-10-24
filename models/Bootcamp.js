@@ -71,62 +71,69 @@ const BootcampSchema=new mongoose.Schema(
         country:String
       },
     
-      careers:{
-          type:[String],
-          required:true,
-          enum:[
-              'Web Development',
-              'Mobile Development',
-              'UI/UX',
-              'Business',
-              "Data Science"
-          ]
-      },
+    careers:{
+        type:[String],
+        required:true,
+        enum:[
+            'Web Development',
+            'Mobile Development',
+            'UI/UX',
+            'Business',
+            "Data Science"
+        ]
+    },
+
+    averageRating:{
+        type:Number,
+        min:[1, 'The smallest rate'],
+        max:[10, 'The biggest rate']
+    },
+
+    averageCost:Number,
+
+    photo:{
+      type:String,
+      default:'avatar-png'
+    },
+
+    housing:{
+        type:Boolean,
+        default:false
+    },
     
-      averageRating:{
-          type:Number,
-          min:[1, 'The smallest rate'],
-          max:[10, 'The biggest rate']
-      },
-    
-      averageCost:Number,
-    
-      photo:{
-        type:String,
-        default:'avatar-png'
+    jobAssistance:{
+      type:Boolean,
+      default:false
       },
 
-      housing:{
+    jobGuarantee:{
+      type:Boolean,
+      default:false
+      },
+    versionKey: false ,
+    acceptGi: {
           type:Boolean,
           default:false
-      },
-      
-      jobAssistance:{
-        type:Boolean,
-        default:false
-        },
-
-      jobGuarantee:{
-        type:Boolean,
-        default:false
-        },
-    versionKey: false ,
-	  acceptGi: {
-        type:Boolean,
-        default:false
-        },
-      createAt:{
-          type:Date,
-          default:Date.now
-      }
-    },
+          },
+    createAt:
     {
-      /***
-       * acccess datas transformed in api response
-       */
-      toJSON:{virtuals:true},
-      toObject:{virtuals:true},
+            type:Date,
+            default:Date.now
+    },
+    user: 
+    {
+      type: mongoose.Schema.ObjectId,
+      ref: 'User',
+      required: true
     }
+  },
+  {
+    /***
+     * acccess datas transformed in api response
+     */
+    toJSON:{virtuals:true},
+    toObject:{virtuals:true},
+  }
 )
 
 BootcampSchema.pre('save',function(next){

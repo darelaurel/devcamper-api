@@ -19,6 +19,8 @@ const courseRouter=require('./course');
 
 const router=express.Router();
 
+const {protect,authorize}=require('../middlewares/auth');
+
 /***
  * courses is child route for bootcamp
  */
@@ -27,17 +29,16 @@ router.use('/:bootcampId/courses',courseRouter);
 router
 .route('/')
 .get(advancedResult(Bootcamp,'courses'),getBootcamps)
-.post(createBootcamp)
+.post(protect,authorize('publisher','admin'),createBootcamp)
 
 router.route('/radius/:zipcode/:distance').get(getBootcampsInRadius)
 
-router.route('/:id/photo').put(bootcampPhotoUpload)
+router.route('/:id/photo').put(protect,authorize('publisher','admin'),bootcampPhotoUpload)
 
 router
 .route('/:id')
 .get(getBootcamp)
-.put(updateBootcamp)
-.delete(deleteBootcamp)
-
+.put(protect,authorize('publisher','admin'),updateBootcamp)
+.delete(protect,authorize('publisher','admin'),deleteBootcamp)
 
 module.exports=router
