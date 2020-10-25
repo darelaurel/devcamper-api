@@ -2,6 +2,8 @@ const express=require('express');
 const dotenv=require('dotenv');
 const fileUpload=require('express-fileupload');
 const mongoSanitize=require('express-mongo-sanitize');
+const helmet = require('helmet');
+const xss = require('xss-clean');
 const morgan=require('morgan');
 const colors=require('colors');
 const errorHandler=require('./middlewares/error');
@@ -46,8 +48,20 @@ app.use(fileUpload());
 
 /***
  * Enable sanitize
+ * remove illegal and specials not escaped characters
  */
 app.use(mongoSanitize());
+
+/***
+ * Allow to add some headers on response headers such as dns prefetch
+ */
+app.use(helmet());
+
+/***
+ * Prevent XSS attacks
+ * Mutate all javascript tags
+ */
+app.use(xss());
 
 app.use('/api/v1/auth', auth)
 
