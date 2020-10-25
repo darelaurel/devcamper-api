@@ -9,9 +9,13 @@ const advancedResult=require('./../middlewares/advancedResult');
  * au cas la route enfant et parent ont le meme param seule le 
  * param du parent est pris en compte
  */
+const reviewRouter=require('./review');
+
 const router=express.Router({mergeParams:true});
 
 const {protect,authorize}=require('../middlewares/auth');
+
+router.use('/:courseId/reviews',reviewRouter);
 
 router
 .route('/')

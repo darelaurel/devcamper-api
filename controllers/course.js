@@ -144,7 +144,7 @@ exports.deleteCourse = asyncHandler(async (req, res, next) => {
 		404
 	  );
 	}
-
+	
 	if(req.user.role == 'admin' || (course.user.toString() == req.user.id))
 	{
 		await course.remove();

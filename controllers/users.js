@@ -58,7 +58,6 @@ exports.updateUser = asyncHandler(async (req, res, next) => {
   });
 });
 
-
 /*
 ** Delete user
 ** DELETE /api/v1/auth/users/:id

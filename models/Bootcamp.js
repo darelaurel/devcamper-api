@@ -26,7 +26,7 @@ const BootcampSchema=new mongoose.Schema(
     website:{
      type:String,
      match:
-     [/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/,
+     [/(https?:\/\/)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/,
         'Please add your website'
      ]   
     },
@@ -41,7 +41,7 @@ const BootcampSchema=new mongoose.Schema(
     
     email:{
         type:String,
-        match:[/^([a-z0-9._-]+)@([a-z0-9]+).([a-z]{2,6}$)/, 'The mail doesn\'t match ']
+        match:[/^([a-z0-9._-]+)@([a-z0-9._-]+).([a-z]{2,6}$)/, 'The mail doesn\'t match ']
     },
     
     address:{
@@ -79,14 +79,9 @@ const BootcampSchema=new mongoose.Schema(
             'Mobile Development',
             'UI/UX',
             'Business',
-            "Data Science"
+            "Data Science",
+            "Artificial Intelligence"
         ]
-    },
-
-    averageRating:{
-        type:Number,
-        min:[1, 'The smallest rate'],
-        max:[10, 'The biggest rate']
     },
 
     averageCost:Number,

@@ -1,6 +1,7 @@
 const express=require('express');
 const dotenv=require('dotenv');
 const fileUpload=require('express-fileupload');
+const mongoSanitize=require('express-mongo-sanitize');
 const morgan=require('morgan');
 const colors=require('colors');
 const errorHandler=require('./middlewares/error');
@@ -8,10 +9,11 @@ const logger=require('./middlewares/logger');
 const connectDB=require('./config/db');
 const cookieParser = require('cookie-parser')
 
+const auth = require('./routes/auth');
 const bootcamps=require('./routes/bootcamp');
 const courses=require('./routes/course');
 const users=require('./routes/user');
-const auth = require('./routes/auth');
+const reviews=require('./routes/review');
 
 /*
 ** Loading of environment variables
@@ -42,14 +44,20 @@ if(process.env.NODE_ENV=="development")
 
 app.use(fileUpload());
 
+/***
+ * Enable sanitize
+ */
+app.use(mongoSanitize());
+
+app.use('/api/v1/auth', auth)
+
 app.use('/api/v1/bootcamps', bootcamps)
 
 app.use('/api/v1/courses', courses)
 
 app.use('/api/v1/users', users)
 
-app.use('/api/v1/auth', auth)
-
+app.use('/api/v1/reviews', reviews)
 
 app.use(errorHandler)
 

@@ -14,9 +14,16 @@ const CourseSchema=new mongoose.Schema({
         type:String,
         required:[true,'Please add a number of weeks']
     },
-    tuition:{
+    tuition:
+    {
         type:Number,
         required:[true,'Please add a cost of tuition']
+    },
+    averageRating:
+    {
+      type:Number,
+      min:[1, 'The smallest rate'],
+      max:[10, 'The biggest rate']
     },
     minimumSkill:{
         type:String,

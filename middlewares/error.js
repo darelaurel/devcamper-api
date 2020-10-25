@@ -14,7 +14,7 @@ console.log(err);
 */
     if(err.name=='CastError')
     {
-        const message=`Ressource ${err.value} not found`
+        const message=`Ressource not found`
         erreur=new ErrorResponse(message,400)
     }
     if(err.name=='ValidationError')
