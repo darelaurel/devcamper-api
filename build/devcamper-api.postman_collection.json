@@ -1,0 +1,1459 @@
+{
+	"info": {
+		"_postman_id": "f0e95590-999f-4a99-87a2-28897a7cb7a7",
+		"name": "devcamper-api",
+		"description": "API for Bootcamps, courses, reviews",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Bootcamps",
+			"item": [
+				{
+					"name": "Bootcamp List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjI4YWM3NWZiMzVkMjRhYjFmZjY3MDI5YWI2MjJkOWI1NjEyOTUxZTQ4NmRkZjgwN2VmYTU4NDQ2MzNiMzA0ZTkzOWRmYjk2NjUzODRmNjc2In0.eyJhdWQiOiIxIiwianRpIjoiMjhhYzc1ZmIzNWQyNGFiMWZmNjcwMjlhYjYyMmQ5YjU2MTI5NTFlNDg2ZGRmODA3ZWZhNTg0NDYzM2IzMDRlOTM5ZGZiOTY2NTM4NGY2NzYiLCJpYXQiOjE2MDEzMDU5NTYsIm5iZiI6MTYwMTMwNTk1NiwiZXhwIjoxNjMyODQxOTU2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QZ9l2pieVeiyWSGDuB7oTJeHsivvwUXHEOdfnhHy0Jv148VG7D1wt25EKVhiLOAF9AWEpGgJbScrL57O_-X6xYadvvXv6pDnXvd3kgxr49gjcIehDuuH9L_3Siaox1ClRc8ayfYvrNung_zYKIbrNbZjaqf3HK5MrT5N48sjh3cl4WFcjt1cp2UUIdHLLmYMyYabOHEaQQIIe_waZ_8BFps7matTnVR3OMzMQK3H72l0TiJLZT8hoxKz5mg32jAR8rGV1e4tuy6wYg3suhYgL6LPa5vG9oaH3VatKODwheLQBPTHzzz_no-V_vrpwJ2bql4Ha6m1tMjPHec91_FYNceBB-pUgcu22AFUC9AN5M2qyk2pCN-tXurGVUOm4DwgYC8Dv4zo9-FtEkGbM-JfeLU6M74MpSd1lhgp65c_hdzY58DKleq2qxekW8_hxNeIpJ1gMPwqtpoGZvYIc5l2eEXAgsV4EMtC_UBuPQ7RBhj7A10w8TTnoCV3uXzlFIZtYaeRd0XeDHwKo4Qx_rTjvNRTselIkANe1B2Q4ryVCB0WZx9bvHl_PNi5rhxrsjToay1pPdLn5Pr5CBiROix77O6-IlJ4G4VYR080eUANw5_gkuI81iBSrhQamZp_mcxD5Ip-jQZT5OEzcBAkDln_i4G3eNUNMyBLiiO-VqRb58A",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/v1/bootcamps",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bootcamps"
+							]
+						},
+						"description": "List of bootcamps"
+					},
+					"response": []
+				},
+				{
+					"name": "Get a single bootcamp",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjI4YWM3NWZiMzVkMjRhYjFmZjY3MDI5YWI2MjJkOWI1NjEyOTUxZTQ4NmRkZjgwN2VmYTU4NDQ2MzNiMzA0ZTkzOWRmYjk2NjUzODRmNjc2In0.eyJhdWQiOiIxIiwianRpIjoiMjhhYzc1ZmIzNWQyNGFiMWZmNjcwMjlhYjYyMmQ5YjU2MTI5NTFlNDg2ZGRmODA3ZWZhNTg0NDYzM2IzMDRlOTM5ZGZiOTY2NTM4NGY2NzYiLCJpYXQiOjE2MDEzMDU5NTYsIm5iZiI6MTYwMTMwNTk1NiwiZXhwIjoxNjMyODQxOTU2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QZ9l2pieVeiyWSGDuB7oTJeHsivvwUXHEOdfnhHy0Jv148VG7D1wt25EKVhiLOAF9AWEpGgJbScrL57O_-X6xYadvvXv6pDnXvd3kgxr49gjcIehDuuH9L_3Siaox1ClRc8ayfYvrNung_zYKIbrNbZjaqf3HK5MrT5N48sjh3cl4WFcjt1cp2UUIdHLLmYMyYabOHEaQQIIe_waZ_8BFps7matTnVR3OMzMQK3H72l0TiJLZT8hoxKz5mg32jAR8rGV1e4tuy6wYg3suhYgL6LPa5vG9oaH3VatKODwheLQBPTHzzz_no-V_vrpwJ2bql4Ha6m1tMjPHec91_FYNceBB-pUgcu22AFUC9AN5M2qyk2pCN-tXurGVUOm4DwgYC8Dv4zo9-FtEkGbM-JfeLU6M74MpSd1lhgp65c_hdzY58DKleq2qxekW8_hxNeIpJ1gMPwqtpoGZvYIc5l2eEXAgsV4EMtC_UBuPQ7RBhj7A10w8TTnoCV3uXzlFIZtYaeRd0XeDHwKo4Qx_rTjvNRTselIkANe1B2Q4ryVCB0WZx9bvHl_PNi5rhxrsjToay1pPdLn5Pr5CBiROix77O6-IlJ4G4VYR080eUANw5_gkuI81iBSrhQamZp_mcxD5Ip-jQZT5OEzcBAkDln_i4G3eNUNMyBLiiO-VqRb58A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/v1/bootcamps/5d713a66ec8f2b88b8f830b8",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bootcamps",
+								"5d713a66ec8f2b88b8f830b8"
+							]
+						},
+						"description": "Fetch data for single bootcamp"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a bootcamp",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjI4YWM3NWZiMzVkMjRhYjFmZjY3MDI5YWI2MjJkOWI1NjEyOTUxZTQ4NmRkZjgwN2VmYTU4NDQ2MzNiMzA0ZTkzOWRmYjk2NjUzODRmNjc2In0.eyJhdWQiOiIxIiwianRpIjoiMjhhYzc1ZmIzNWQyNGFiMWZmNjcwMjlhYjYyMmQ5YjU2MTI5NTFlNDg2ZGRmODA3ZWZhNTg0NDYzM2IzMDRlOTM5ZGZiOTY2NTM4NGY2NzYiLCJpYXQiOjE2MDEzMDU5NTYsIm5iZiI6MTYwMTMwNTk1NiwiZXhwIjoxNjMyODQxOTU2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QZ9l2pieVeiyWSGDuB7oTJeHsivvwUXHEOdfnhHy0Jv148VG7D1wt25EKVhiLOAF9AWEpGgJbScrL57O_-X6xYadvvXv6pDnXvd3kgxr49gjcIehDuuH9L_3Siaox1ClRc8ayfYvrNung_zYKIbrNbZjaqf3HK5MrT5N48sjh3cl4WFcjt1cp2UUIdHLLmYMyYabOHEaQQIIe_waZ_8BFps7matTnVR3OMzMQK3H72l0TiJLZT8hoxKz5mg32jAR8rGV1e4tuy6wYg3suhYgL6LPa5vG9oaH3VatKODwheLQBPTHzzz_no-V_vrpwJ2bql4Ha6m1tMjPHec91_FYNceBB-pUgcu22AFUC9AN5M2qyk2pCN-tXurGVUOm4DwgYC8Dv4zo9-FtEkGbM-JfeLU6M74MpSd1lhgp65c_hdzY58DKleq2qxekW8_hxNeIpJ1gMPwqtpoGZvYIc5l2eEXAgsV4EMtC_UBuPQ7RBhj7A10w8TTnoCV3uXzlFIZtYaeRd0XeDHwKo4Qx_rTjvNRTselIkANe1B2Q4ryVCB0WZx9bvHl_PNi5rhxrsjToay1pPdLn5Pr5CBiROix77O6-IlJ4G4VYR080eUANw5_gkuI81iBSrhQamZp_mcxD5Ip-jQZT5OEzcBAkDln_i4G3eNUNMyBLiiO-VqRb58A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/bootcamps/5d725a037b292f5f8ceff787",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bootcamps",
+								"5d725a037b292f5f8ceff787"
+							]
+						},
+						"description": "Delete a single bootcamp"
+					},
+					"response": []
+				},
+				{
+					"name": "Add a bootcamp",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjI4YWM3NWZiMzVkMjRhYjFmZjY3MDI5YWI2MjJkOWI1NjEyOTUxZTQ4NmRkZjgwN2VmYTU4NDQ2MzNiMzA0ZTkzOWRmYjk2NjUzODRmNjc2In0.eyJhdWQiOiIxIiwianRpIjoiMjhhYzc1ZmIzNWQyNGFiMWZmNjcwMjlhYjYyMmQ5YjU2MTI5NTFlNDg2ZGRmODA3ZWZhNTg0NDYzM2IzMDRlOTM5ZGZiOTY2NTM4NGY2NzYiLCJpYXQiOjE2MDEzMDU5NTYsIm5iZiI6MTYwMTMwNTk1NiwiZXhwIjoxNjMyODQxOTU2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QZ9l2pieVeiyWSGDuB7oTJeHsivvwUXHEOdfnhHy0Jv148VG7D1wt25EKVhiLOAF9AWEpGgJbScrL57O_-X6xYadvvXv6pDnXvd3kgxr49gjcIehDuuH9L_3Siaox1ClRc8ayfYvrNung_zYKIbrNbZjaqf3HK5MrT5N48sjh3cl4WFcjt1cp2UUIdHLLmYMyYabOHEaQQIIe_waZ_8BFps7matTnVR3OMzMQK3H72l0TiJLZT8hoxKz5mg32jAR8rGV1e4tuy6wYg3suhYgL6LPa5vG9oaH3VatKODwheLQBPTHzzz_no-V_vrpwJ2bql4Ha6m1tMjPHec91_FYNceBB-pUgcu22AFUC9AN5M2qyk2pCN-tXurGVUOm4DwgYC8Dv4zo9-FtEkGbM-JfeLU6M74MpSd1lhgp65c_hdzY58DKleq2qxekW8_hxNeIpJ1gMPwqtpoGZvYIc5l2eEXAgsV4EMtC_UBuPQ7RBhj7A10w8TTnoCV3uXzlFIZtYaeRd0XeDHwKo4Qx_rTjvNRTselIkANe1B2Q4ryVCB0WZx9bvHl_PNi5rhxrsjToay1pPdLn5Pr5CBiROix77O6-IlJ4G4VYR080eUANw5_gkuI81iBSrhQamZp_mcxD5Ip-jQZT5OEzcBAkDln_i4G3eNUNMyBLiiO-VqRb58A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\t\"name\": \"Flutter Bootcamp\",\r\n\t\t\"description\": \"Flutter is a full stack JavaScript Bootcamp located in the heart of Boston that focuses on the technologies you need to get a high paying job as a web developer\",\r\n\t\t\"website\": \"https://devworks.com\",\r\n\t\t\"phone\": \"(111) 111-1111\",\r\n\t\t\"email\": \"flutter@googl.com\",\r\n\t\t\"address\": \"233 Bay State Rd Boston MA 02215\",\r\n\t\t\"careers\": [\"Web Development\", \"UI/UX\", \"Business\"],\r\n\t\t\"housing\": true,\r\n\t\t\"jobAssistance\": true,\r\n        \"user\": \"5d7a514b5d2c12c7449be046\",\r\n\t\t\"jobGuarantee\": false,\r\n\t\t\"acceptGi\": true\r\n\t}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/bootcamps",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bootcamps"
+							]
+						},
+						"description": "Create a bootcamp"
+					},
+					"response": []
+				},
+				{
+					"name": "Update a  bootcamp",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjI4YWM3NWZiMzVkMjRhYjFmZjY3MDI5YWI2MjJkOWI1NjEyOTUxZTQ4NmRkZjgwN2VmYTU4NDQ2MzNiMzA0ZTkzOWRmYjk2NjUzODRmNjc2In0.eyJhdWQiOiIxIiwianRpIjoiMjhhYzc1ZmIzNWQyNGFiMWZmNjcwMjlhYjYyMmQ5YjU2MTI5NTFlNDg2ZGRmODA3ZWZhNTg0NDYzM2IzMDRlOTM5ZGZiOTY2NTM4NGY2NzYiLCJpYXQiOjE2MDEzMDU5NTYsIm5iZiI6MTYwMTMwNTk1NiwiZXhwIjoxNjMyODQxOTU2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QZ9l2pieVeiyWSGDuB7oTJeHsivvwUXHEOdfnhHy0Jv148VG7D1wt25EKVhiLOAF9AWEpGgJbScrL57O_-X6xYadvvXv6pDnXvd3kgxr49gjcIehDuuH9L_3Siaox1ClRc8ayfYvrNung_zYKIbrNbZjaqf3HK5MrT5N48sjh3cl4WFcjt1cp2UUIdHLLmYMyYabOHEaQQIIe_waZ_8BFps7matTnVR3OMzMQK3H72l0TiJLZT8hoxKz5mg32jAR8rGV1e4tuy6wYg3suhYgL6LPa5vG9oaH3VatKODwheLQBPTHzzz_no-V_vrpwJ2bql4Ha6m1tMjPHec91_FYNceBB-pUgcu22AFUC9AN5M2qyk2pCN-tXurGVUOm4DwgYC8Dv4zo9-FtEkGbM-JfeLU6M74MpSd1lhgp65c_hdzY58DKleq2qxekW8_hxNeIpJ1gMPwqtpoGZvYIc5l2eEXAgsV4EMtC_UBuPQ7RBhj7A10w8TTnoCV3uXzlFIZtYaeRd0XeDHwKo4Qx_rTjvNRTselIkANe1B2Q4ryVCB0WZx9bvHl_PNi5rhxrsjToay1pPdLn5Pr5CBiROix77O6-IlJ4G4VYR080eUANw5_gkuI81iBSrhQamZp_mcxD5Ip-jQZT5OEzcBAkDln_i4G3eNUNMyBLiiO-VqRb58A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"name\": \"MongoDB Bootcamp\",\r\n        \"description\": \"MongoDB is a powerful database \",\r\n        \"website\": \"https://devworks.com\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/bootcamps/5d725a037b292f5f8ceff787",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bootcamps",
+								"5d725a037b292f5f8ceff787"
+							]
+						},
+						"description": "Update of bootcamp"
+					},
+					"response": []
+				},
+				{
+					"name": "Get bootcamp with zipcode and distance",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjI4YWM3NWZiMzVkMjRhYjFmZjY3MDI5YWI2MjJkOWI1NjEyOTUxZTQ4NmRkZjgwN2VmYTU4NDQ2MzNiMzA0ZTkzOWRmYjk2NjUzODRmNjc2In0.eyJhdWQiOiIxIiwianRpIjoiMjhhYzc1ZmIzNWQyNGFiMWZmNjcwMjlhYjYyMmQ5YjU2MTI5NTFlNDg2ZGRmODA3ZWZhNTg0NDYzM2IzMDRlOTM5ZGZiOTY2NTM4NGY2NzYiLCJpYXQiOjE2MDEzMDU5NTYsIm5iZiI6MTYwMTMwNTk1NiwiZXhwIjoxNjMyODQxOTU2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QZ9l2pieVeiyWSGDuB7oTJeHsivvwUXHEOdfnhHy0Jv148VG7D1wt25EKVhiLOAF9AWEpGgJbScrL57O_-X6xYadvvXv6pDnXvd3kgxr49gjcIehDuuH9L_3Siaox1ClRc8ayfYvrNung_zYKIbrNbZjaqf3HK5MrT5N48sjh3cl4WFcjt1cp2UUIdHLLmYMyYabOHEaQQIIe_waZ_8BFps7matTnVR3OMzMQK3H72l0TiJLZT8hoxKz5mg32jAR8rGV1e4tuy6wYg3suhYgL6LPa5vG9oaH3VatKODwheLQBPTHzzz_no-V_vrpwJ2bql4Ha6m1tMjPHec91_FYNceBB-pUgcu22AFUC9AN5M2qyk2pCN-tXurGVUOm4DwgYC8Dv4zo9-FtEkGbM-JfeLU6M74MpSd1lhgp65c_hdzY58DKleq2qxekW8_hxNeIpJ1gMPwqtpoGZvYIc5l2eEXAgsV4EMtC_UBuPQ7RBhj7A10w8TTnoCV3uXzlFIZtYaeRd0XeDHwKo4Qx_rTjvNRTselIkANe1B2Q4ryVCB0WZx9bvHl_PNi5rhxrsjToay1pPdLn5Pr5CBiROix77O6-IlJ4G4VYR080eUANw5_gkuI81iBSrhQamZp_mcxD5Ip-jQZT5OEzcBAkDln_i4G3eNUNMyBLiiO-VqRb58A",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n            \"careers\": [\n                \"Web Development\",\n                \"UI/UX\",\n                \"Business\"\n            ],\n            \"photo\": \"avatar-png\",\n            \"name\": \"GO Language Bootcamp\",\n            \"description\": \"Go Devworks is a full stack JavaScript Bootcamp located in the heart of Boston that focuses on the technologies you need to get a high paying job as a web developer\",\n            \"website\": \"https://go-devworks.com\",\n            \"phone\": \"(111) 111-1111\",\n            \"email\": \"enroll@devworks.com\",\n            \"address\": \"246 Bay State Rd Boston MA 02215\"\n        }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/bootcamps/radius/05401-3444/10",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bootcamps",
+								"radius",
+								"05401-3444",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bootcamp Filter API ",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjI4YWM3NWZiMzVkMjRhYjFmZjY3MDI5YWI2MjJkOWI1NjEyOTUxZTQ4NmRkZjgwN2VmYTU4NDQ2MzNiMzA0ZTkzOWRmYjk2NjUzODRmNjc2In0.eyJhdWQiOiIxIiwianRpIjoiMjhhYzc1ZmIzNWQyNGFiMWZmNjcwMjlhYjYyMmQ5YjU2MTI5NTFlNDg2ZGRmODA3ZWZhNTg0NDYzM2IzMDRlOTM5ZGZiOTY2NTM4NGY2NzYiLCJpYXQiOjE2MDEzMDU5NTYsIm5iZiI6MTYwMTMwNTk1NiwiZXhwIjoxNjMyODQxOTU2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QZ9l2pieVeiyWSGDuB7oTJeHsivvwUXHEOdfnhHy0Jv148VG7D1wt25EKVhiLOAF9AWEpGgJbScrL57O_-X6xYadvvXv6pDnXvd3kgxr49gjcIehDuuH9L_3Siaox1ClRc8ayfYvrNung_zYKIbrNbZjaqf3HK5MrT5N48sjh3cl4WFcjt1cp2UUIdHLLmYMyYabOHEaQQIIe_waZ_8BFps7matTnVR3OMzMQK3H72l0TiJLZT8hoxKz5mg32jAR8rGV1e4tuy6wYg3suhYgL6LPa5vG9oaH3VatKODwheLQBPTHzzz_no-V_vrpwJ2bql4Ha6m1tMjPHec91_FYNceBB-pUgcu22AFUC9AN5M2qyk2pCN-tXurGVUOm4DwgYC8Dv4zo9-FtEkGbM-JfeLU6M74MpSd1lhgp65c_hdzY58DKleq2qxekW8_hxNeIpJ1gMPwqtpoGZvYIc5l2eEXAgsV4EMtC_UBuPQ7RBhj7A10w8TTnoCV3uXzlFIZtYaeRd0XeDHwKo4Qx_rTjvNRTselIkANe1B2Q4ryVCB0WZx9bvHl_PNi5rhxrsjToay1pPdLn5Pr5CBiROix77O6-IlJ4G4VYR080eUANw5_gkuI81iBSrhQamZp_mcxD5Ip-jQZT5OEzcBAkDln_i4G3eNUNMyBLiiO-VqRb58A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/v1/bootcamps?email[eq]=go-lang@devworks.com",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bootcamps"
+							],
+							"query": [
+								{
+									"key": "email[eq]",
+									"value": "go-lang@devworks.com"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Bootcamp Select Filter API ",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjI4YWM3NWZiMzVkMjRhYjFmZjY3MDI5YWI2MjJkOWI1NjEyOTUxZTQ4NmRkZjgwN2VmYTU4NDQ2MzNiMzA0ZTkzOWRmYjk2NjUzODRmNjc2In0.eyJhdWQiOiIxIiwianRpIjoiMjhhYzc1ZmIzNWQyNGFiMWZmNjcwMjlhYjYyMmQ5YjU2MTI5NTFlNDg2ZGRmODA3ZWZhNTg0NDYzM2IzMDRlOTM5ZGZiOTY2NTM4NGY2NzYiLCJpYXQiOjE2MDEzMDU5NTYsIm5iZiI6MTYwMTMwNTk1NiwiZXhwIjoxNjMyODQxOTU2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QZ9l2pieVeiyWSGDuB7oTJeHsivvwUXHEOdfnhHy0Jv148VG7D1wt25EKVhiLOAF9AWEpGgJbScrL57O_-X6xYadvvXv6pDnXvd3kgxr49gjcIehDuuH9L_3Siaox1ClRc8ayfYvrNung_zYKIbrNbZjaqf3HK5MrT5N48sjh3cl4WFcjt1cp2UUIdHLLmYMyYabOHEaQQIIe_waZ_8BFps7matTnVR3OMzMQK3H72l0TiJLZT8hoxKz5mg32jAR8rGV1e4tuy6wYg3suhYgL6LPa5vG9oaH3VatKODwheLQBPTHzzz_no-V_vrpwJ2bql4Ha6m1tMjPHec91_FYNceBB-pUgcu22AFUC9AN5M2qyk2pCN-tXurGVUOm4DwgYC8Dv4zo9-FtEkGbM-JfeLU6M74MpSd1lhgp65c_hdzY58DKleq2qxekW8_hxNeIpJ1gMPwqtpoGZvYIc5l2eEXAgsV4EMtC_UBuPQ7RBhj7A10w8TTnoCV3uXzlFIZtYaeRd0XeDHwKo4Qx_rTjvNRTselIkANe1B2Q4ryVCB0WZx9bvHl_PNi5rhxrsjToay1pPdLn5Pr5CBiROix77O6-IlJ4G4VYR080eUANw5_gkuI81iBSrhQamZp_mcxD5Ip-jQZT5OEzcBAkDln_i4G3eNUNMyBLiiO-VqRb58A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/v1/bootcamps?select=name,email&sort=name",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bootcamps"
+							],
+							"query": [
+								{
+									"key": "select",
+									"value": "name,email"
+								},
+								{
+									"key": "sort",
+									"value": "name"
+								}
+							]
+						},
+						"description": "Custom filters & sort with select params to accept just some fields"
+					},
+					"response": []
+				},
+				{
+					"name": "Bootcamp List Pagination  API ",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjI4YWM3NWZiMzVkMjRhYjFmZjY3MDI5YWI2MjJkOWI1NjEyOTUxZTQ4NmRkZjgwN2VmYTU4NDQ2MzNiMzA0ZTkzOWRmYjk2NjUzODRmNjc2In0.eyJhdWQiOiIxIiwianRpIjoiMjhhYzc1ZmIzNWQyNGFiMWZmNjcwMjlhYjYyMmQ5YjU2MTI5NTFlNDg2ZGRmODA3ZWZhNTg0NDYzM2IzMDRlOTM5ZGZiOTY2NTM4NGY2NzYiLCJpYXQiOjE2MDEzMDU5NTYsIm5iZiI6MTYwMTMwNTk1NiwiZXhwIjoxNjMyODQxOTU2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QZ9l2pieVeiyWSGDuB7oTJeHsivvwUXHEOdfnhHy0Jv148VG7D1wt25EKVhiLOAF9AWEpGgJbScrL57O_-X6xYadvvXv6pDnXvd3kgxr49gjcIehDuuH9L_3Siaox1ClRc8ayfYvrNung_zYKIbrNbZjaqf3HK5MrT5N48sjh3cl4WFcjt1cp2UUIdHLLmYMyYabOHEaQQIIe_waZ_8BFps7matTnVR3OMzMQK3H72l0TiJLZT8hoxKz5mg32jAR8rGV1e4tuy6wYg3suhYgL6LPa5vG9oaH3VatKODwheLQBPTHzzz_no-V_vrpwJ2bql4Ha6m1tMjPHec91_FYNceBB-pUgcu22AFUC9AN5M2qyk2pCN-tXurGVUOm4DwgYC8Dv4zo9-FtEkGbM-JfeLU6M74MpSd1lhgp65c_hdzY58DKleq2qxekW8_hxNeIpJ1gMPwqtpoGZvYIc5l2eEXAgsV4EMtC_UBuPQ7RBhj7A10w8TTnoCV3uXzlFIZtYaeRd0XeDHwKo4Qx_rTjvNRTselIkANe1B2Q4ryVCB0WZx9bvHl_PNi5rhxrsjToay1pPdLn5Pr5CBiROix77O6-IlJ4G4VYR080eUANw5_gkuI81iBSrhQamZp_mcxD5Ip-jQZT5OEzcBAkDln_i4G3eNUNMyBLiiO-VqRb58A",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/v1/bootcamps?page=1&limit=1",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bootcamps"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List of courses of bootcamp",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/bootcamps/5d713995b721c3bb38c1f5d0/courses",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bootcamps",
+								"5d713995b721c3bb38c1f5d0",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Upload bootcamp picture",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjI4YWM3NWZiMzVkMjRhYjFmZjY3MDI5YWI2MjJkOWI1NjEyOTUxZTQ4NmRkZjgwN2VmYTU4NDQ2MzNiMzA0ZTkzOWRmYjk2NjUzODRmNjc2In0.eyJhdWQiOiIxIiwianRpIjoiMjhhYzc1ZmIzNWQyNGFiMWZmNjcwMjlhYjYyMmQ5YjU2MTI5NTFlNDg2ZGRmODA3ZWZhNTg0NDYzM2IzMDRlOTM5ZGZiOTY2NTM4NGY2NzYiLCJpYXQiOjE2MDEzMDU5NTYsIm5iZiI6MTYwMTMwNTk1NiwiZXhwIjoxNjMyODQxOTU2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QZ9l2pieVeiyWSGDuB7oTJeHsivvwUXHEOdfnhHy0Jv148VG7D1wt25EKVhiLOAF9AWEpGgJbScrL57O_-X6xYadvvXv6pDnXvd3kgxr49gjcIehDuuH9L_3Siaox1ClRc8ayfYvrNung_zYKIbrNbZjaqf3HK5MrT5N48sjh3cl4WFcjt1cp2UUIdHLLmYMyYabOHEaQQIIe_waZ_8BFps7matTnVR3OMzMQK3H72l0TiJLZT8hoxKz5mg32jAR8rGV1e4tuy6wYg3suhYgL6LPa5vG9oaH3VatKODwheLQBPTHzzz_no-V_vrpwJ2bql4Ha6m1tMjPHec91_FYNceBB-pUgcu22AFUC9AN5M2qyk2pCN-tXurGVUOm4DwgYC8Dv4zo9-FtEkGbM-JfeLU6M74MpSd1lhgp65c_hdzY58DKleq2qxekW8_hxNeIpJ1gMPwqtpoGZvYIc5l2eEXAgsV4EMtC_UBuPQ7RBhj7A10w8TTnoCV3uXzlFIZtYaeRd0XeDHwKo4Qx_rTjvNRTselIkANe1B2Q4ryVCB0WZx9bvHl_PNi5rhxrsjToay1pPdLn5Pr5CBiROix77O6-IlJ4G4VYR080eUANw5_gkuI81iBSrhQamZp_mcxD5Ip-jQZT5OEzcBAkDln_i4G3eNUNMyBLiiO-VqRb58A",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/E:/Ressources/Design ressource/avatar/7.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/bootcamps/5d713995b721c3bb38c1f5d0/photo",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bootcamps",
+								"5d713995b721c3bb38c1f5d0",
+								"photo"
+							],
+							"query": [
+								{
+									"key": "file",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Folder of Bootcamps request API",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Courses",
+			"item": [
+				{
+					"name": "List of courses",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"scholarshipAvailable\": false,\r\n        \"_id\": \"5d725cb9c4ded7bcb480eaa1\",\r\n        \"title\": \"Typescript Master\",\r\n        \"description\": \"In this course you will learn all about the front end with HTML, CSS and TypeScript. You will master tools like Git and Webpack and also learn C# and ASP.NET with Postgres\",\r\n        \"weeks\": \"10\",\r\n        \"tuition\": \"12000\",\r\n        \"minimumSkill\": \"intermediate\",\r\n        \"bootcampId\": \"5d713a66ec8f2b88b8f830b8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/courses",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a course",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/courses/5d725cfec4ded7bcb480eaa7",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"courses",
+								"5d725cfec4ded7bcb480eaa7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add a course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmOTM3ZDNmZTc1NmNlMzlhY2Q1MzBkZiIsImlhdCI6MTYwMzUzNDE2MiwiZXhwIjoxNjAzNjIwNTYyfQ.c6mB3XUd7ZEZ3hgg4hJ8KoSyEvwrAb0FcTVZ5VWBIkM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n            \"scholarshipAvailable\": false,\r\n            \"title\": \"Javascript Basics\",\r\n            \"_id\": \"5f948e6a1107c22560e96b41\",\r\n            \"description\": \"In this course you will learn Javascript course, start from scratch\",\r\n            \"weeks\": \"5\",\r\n            \"tuition\": 2500,\r\n            \"minimumSkill\": \"beginner\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/bootcamps/5d713995b721c3bb38c1f5d0/courses",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"bootcamps",
+								"5d713995b721c3bb38c1f5d0",
+								"courses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"MongoDB Master\",\r\n    \"description\": \"In this course you will learn all about the noSQL dtabase especially MongoDB\",\r\n    \"weeks\": \"4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/courses/5d725cfec4ded7bcb480eaa7",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"courses",
+								"5d725cfec4ded7bcb480eaa7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmOTM3ZDNmZTc1NmNlMzlhY2Q1MzBkZiIsImlhdCI6MTYwMzUzNDE2MiwiZXhwIjoxNjAzNjIwNTYyfQ.c6mB3XUd7ZEZ3hgg4hJ8KoSyEvwrAb0FcTVZ5VWBIkM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"MongoDB Master\",\r\n    \"description\": \"In this course you will learn all about the noSQL dtabase especially MongoDB\",\r\n    \"weeks\": \"4\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/courses/5d725a4a7b292f5f8ceff789",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"courses",
+								"5d725a4a7b292f5f8ceff789"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get reviews of single course",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"scholarshipAvailable\": false,\r\n        \"_id\": \"5d725cb9c4ded7bcb480eaa1\",\r\n        \"title\": \"Typescript Master\",\r\n        \"description\": \"In this course you will learn all about the front end with HTML, CSS and TypeScript. You will master tools like Git and Webpack and also learn C# and ASP.NET with Postgres\",\r\n        \"weeks\": \"10\",\r\n        \"tuition\": \"12000\",\r\n        \"minimumSkill\": \"intermediate\",\r\n        \"bootcampId\": \"5d713a66ec8f2b88b8f830b8\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/courses/5d725a4a7b292f5f8ceff789/reviews",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"courses",
+								"5d725a4a7b292f5f8ceff789",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Courses Request",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f8c8a676-fdff-44b0-8791-327a957cf7bf",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "386bf960-ae90-41ce-b05c-e7464b39598e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Authentification",
+			"item": [
+				{
+					"name": "Register user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "f864020c-24ca-48b2-b1a6-3f356560667c",
+								"exec": [
+									"pm.environment.set(\"TOKEN\",pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"pele@pele.com\",\r\n    \"password\":\"merde2020\",\r\n    \"name\":\"King\",\r\n    \"role\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/auth/register",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8e9e97d8-7252-41f6-9c9f-8e5a06beab08",
+								"exec": [
+									"pm.environment.set(\"TOKEN\",pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"pele@pele.com\",\r\n    \"password\":\"merde2020\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/auth/login",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get current user",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmOTM3ZDNmZTc1NmNlMzlhY2Q1MzBkZiIsImlhdCI6MTYwMzUzNDE2MiwiZXhwIjoxNjAzNjIwNTYyfQ.c6mB3XUd7ZEZ3hgg4hJ8KoSyEvwrAb0FcTVZ5VWBIkM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/auth/me",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forget Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8e9e97d8-7252-41f6-9c9f-8e5a06beab08",
+								"exec": [
+									"pm.environment.set(\"TOKEN\",pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"pele@pele.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/auth/forget-password",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"forget-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8e9e97d8-7252-41f6-9c9f-8e5a06beab08",
+								"exec": [
+									"pm.environment.set(\"TOKEN\",pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\":\"merde2020\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/auth/reset-password/647a2f298dc16d2f704287cf74645fe5fffdf22c",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"reset-password",
+								"647a2f298dc16d2f704287cf74645fe5fffdf22c"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Data",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8e9e97d8-7252-41f6-9c9f-8e5a06beab08",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Pele\",\r\n    \"email\": \"pele-br12@pele.com\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/auth/update-data",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"update-data"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User Password",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8e9e97d8-7252-41f6-9c9f-8e5a06beab08",
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"currentPassword\":\"merde202\",\r\n    \"newPassword\": \"merde2020\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/auth/update-password",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"update-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Logout",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "8e9e97d8-7252-41f6-9c9f-8e5a06beab08",
+								"exec": [
+									"pm.environment.set(\"TOKEN\",pm.response.json().token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"pele@pele.com\",\r\n    \"password\":\"merde2020\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/auth/logout",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Authentification Requests",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get all users",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/users",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get a user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/users/5c8a1d5b0190b214360dc040",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"5c8a1d5b0190b214360dc040"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"role\": \"publisher\",\r\n        \"id\": \"5c8a1d5b0190b21436dz52sa\",\r\n        \"password\":\"merde2020\",\r\n        \"name\": \"Stephan Henking\",\r\n        \"email\": \"stephhen@gmail.com\",\r\n        \"createdAt\": \"2020-10-25T13:01:57.950Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/users",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user data",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"role\": \"publisher\",\r\n        \"password\":\"merde2020\",\r\n        \"name\": \"Stephen Henking\",\r\n        \"email\": \"stephhen@gmail.com\",\r\n        \"createdAt\": \"2020-10-25T13:01:57.950Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/users/5f95789ba89fda00ec63775d",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"5f95789ba89fda00ec63775d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\r\n        \"role\": \"publisher\",\r\n        \"password\":\"merde2020\",\r\n        \"name\": \"Stephen Henking\",\r\n        \"email\": \"stephhen@gmail.com\",\r\n        \"createdAt\": \"2020-10-25T13:01:57.950Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/users/5f95789ba89fda00ec63775d",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"5f95789ba89fda00ec63775d"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Crud for app users",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "Get all reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{URL}}/api/v1/reviews",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reviews"
+							]
+						},
+						"description": "Get all reviews"
+					},
+					"response": []
+				},
+				{
+					"name": "Create review of course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"scholarshipAvailable\": false,\r\n        \"title\": \"Amazing course\",\r\n        \"text\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra feugiat mauris id viverra. Duis luctus ex sed facilisis ultrices. Curabitur scelerisque bibendum ligula, quis condimentum libero fermentum in. Aenean erat erat, aliquam in purus a, rhoncus hendrerit tellus. Donec accumsan justo in felis consequat sollicitudin. Fusce luctus mattis nunc vitae maximus. Curabitur semper felis eu magna laoreet scelerisque\",\r\n        \"rating\": 8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/courses/5d725cfec4ded7bcb480eaa6/reviews",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"courses",
+								"5d725cfec4ded7bcb480eaa6",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get single review",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjI4YWM3NWZiMzVkMjRhYjFmZjY3MDI5YWI2MjJkOWI1NjEyOTUxZTQ4NmRkZjgwN2VmYTU4NDQ2MzNiMzA0ZTkzOWRmYjk2NjUzODRmNjc2In0.eyJhdWQiOiIxIiwianRpIjoiMjhhYzc1ZmIzNWQyNGFiMWZmNjcwMjlhYjYyMmQ5YjU2MTI5NTFlNDg2ZGRmODA3ZWZhNTg0NDYzM2IzMDRlOTM5ZGZiOTY2NTM4NGY2NzYiLCJpYXQiOjE2MDEzMDU5NTYsIm5iZiI6MTYwMTMwNTk1NiwiZXhwIjoxNjMyODQxOTU2LCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.QZ9l2pieVeiyWSGDuB7oTJeHsivvwUXHEOdfnhHy0Jv148VG7D1wt25EKVhiLOAF9AWEpGgJbScrL57O_-X6xYadvvXv6pDnXvd3kgxr49gjcIehDuuH9L_3Siaox1ClRc8ayfYvrNung_zYKIbrNbZjaqf3HK5MrT5N48sjh3cl4WFcjt1cp2UUIdHLLmYMyYabOHEaQQIIe_waZ_8BFps7matTnVR3OMzMQK3H72l0TiJLZT8hoxKz5mg32jAR8rGV1e4tuy6wYg3suhYgL6LPa5vG9oaH3VatKODwheLQBPTHzzz_no-V_vrpwJ2bql4Ha6m1tMjPHec91_FYNceBB-pUgcu22AFUC9AN5M2qyk2pCN-tXurGVUOm4DwgYC8Dv4zo9-FtEkGbM-JfeLU6M74MpSd1lhgp65c_hdzY58DKleq2qxekW8_hxNeIpJ1gMPwqtpoGZvYIc5l2eEXAgsV4EMtC_UBuPQ7RBhj7A10w8TTnoCV3uXzlFIZtYaeRd0XeDHwKo4Qx_rTjvNRTselIkANe1B2Q4ryVCB0WZx9bvHl_PNi5rhxrsjToay1pPdLn5Pr5CBiROix77O6-IlJ4G4VYR080eUANw5_gkuI81iBSrhQamZp_mcxD5Ip-jQZT5OEzcBAkDln_i4G3eNUNMyBLiiO-VqRb58A",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{URL}}/api/v1/reviews/5d7a514b5d2c12c7449be020",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reviews",
+								"5d7a514b5d2c12c7449be020"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update review of course",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"scholarshipAvailable\": false,\r\n        \"title\": \"Amazing course\",\r\n        \"text\": \"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra feugiat mauris id viverra. Duis luctus ex sed facilisis ultrices. Curabitur scelerisque bibendum ligula, quis condimentum libero fermentum in. Aenean erat erat, aliquam in purus a, rhoncus hendrerit tellus. Donec accumsan justo in felis consequat sollicitudin. Fusce luctus mattis nunc vitae maximus. Curabitur semper felis eu magna laoreet scelerisque\",\r\n        \"rating\": 8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/courses/5d725cfec4ded7bcb480eaa6/reviews",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"courses",
+								"5d725cfec4ded7bcb480eaa6",
+								"reviews"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete review ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{TOKEN}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"scholarshipAvailable\": false,\r\n        \"title\": \"Amazing course\",\r\n        \"text\": \"I wanna recommand this course, amazing content, such as skills i earn just to follow, thanks instrucotr, organizers\",\r\n        \"rating\": 8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{URL}}/api/v1/reviews/5f95a6fc4350944a0457e197",
+							"host": [
+								"{{URL}}"
+							],
+							"path": [
+								"api",
+								"v1",
+								"reviews",
+								"5f95a6fc4350944a0457e197"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Manage reviews of courses\r\n",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "9d06d54c-2505-4c7b-8a82-8069647653d5",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "33801018-008f-459f-9244-e24d3510909c",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
