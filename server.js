@@ -10,7 +10,9 @@ const cookieParser = require('cookie-parser')
 
 const bootcamps=require('./routes/bootcamp');
 const courses=require('./routes/course');
+const users=require('./routes/user');
 const auth = require('./routes/auth');
+
 /*
 ** Loading of environment variables
 */
@@ -44,7 +46,10 @@ app.use('/api/v1/bootcamps', bootcamps)
 
 app.use('/api/v1/courses', courses)
 
+app.use('/api/v1/users', users)
+
 app.use('/api/v1/auth', auth)
+
 
 app.use(errorHandler)
 
