@@ -14,7 +14,7 @@ console.log(err);
 */
     if(err.name=='CastError')
     {
-        const message=`Ressource ${err.value} inaccessible`
+        const message=`Ressource ${err.value} not found`
         erreur=new ErrorResponse(message,400)
     }
     if(err.name=='ValidationError')
@@ -24,13 +24,13 @@ console.log(err);
     }
     if(err.code==11000)
     {
-        const message=`Champ dupliqué`
+        const message=`Duplicate field`
         erreur=new ErrorResponse(message,400)
     }
 
     res.status(erreur.statusCode || 500).json({
         success:false,
-        error:erreur.message || "Serveur indisponible"
+        error:erreur.message || "Server unavailable"
     });
 
 

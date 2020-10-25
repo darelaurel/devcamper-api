@@ -21,9 +21,12 @@ const User= require('./models/User')
  * Read JSON files
  */
 
-const bootcamps=JSON.parse(fs.readFileSync(`${__dirname}/data/bootcamps.json`,'utf-8'))
-const courses=JSON.parse(fs.readFileSync(`${__dirname}/data/courses.json`,'utf-8'))
+const bootcamps=JSON.parse(fs.readFileSync(`${__dirname}/data/bootcamps.json`,'utf-8'));
+
+const courses=JSON.parse(fs.readFileSync(`${__dirname}/data/courses.json`,'utf-8'));
+
 const users=JSON.parse(fs.readFileSync(`${__dirname}/data/users.json`,'utf-8'))
+
 /**
  * Insert into DB
  */
